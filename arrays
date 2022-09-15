@@ -1,0 +1,27 @@
+
+
+
+$Array = @()
+
+$Processes = Get-Process
+
+Foreach($Proc in $Processes)
+{
+  If($Proc.WS/1mb -gt 100)
+  {
+    $Array += New-Object psobject -Property @{'ProcessName' = $Proc.name; 'workingSet' =$Proc.ws}
+  }
+
+$Array | select 'ProcessName', 'WorkingSet' | Export-csv.\file.csv -NoTypeInformation
+
+$CSVImport = @()
+$CSVImport = Import-Csv .\file.csv
+
+ForEach(
+
+
+
+
+
+
+
