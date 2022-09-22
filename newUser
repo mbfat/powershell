@@ -1,0 +1,34 @@
+Use a semicolon to chain commands in PowerShell:
+
+
+
+
+New-LocalUser -Name "test001" -PasswordNeverExpires ; Add-LocalGroupMember -Group "Administrators" -Member "test001"
+
+
+
+---
+https://learn.microsoft.com/en-us/azure/active-directory/authentication/howto-sspr-authenticationdata
+## Security questions and answers
+The security questions and answers are stored securely in your Azure AD tenant and are only accessible to users via the [SSPR registration portal](https://aka.ms/ssprsetup). Administrators can't see, set, or modify the contents of another users' questions and answers.
+
+---
+
+
+
+Add-LocalGroupMember -Group "Administrators" -Member "test001"
+Add-LocalGroupMember -Group "Users" -Member "username"
+
+
+
+add for AD
+Add-LocalGroupMember -Group "Administrators" -Member "domain\user or group," "additional users or groups."
+Add-LocalGroupMember -Group "Users" -Member "domain\user or group," "additional users or groups."
+
+
+
+
+
+
+
+
