@@ -1,0 +1,15 @@
+
+ps1_Get-LocalUser.ps1
+Get-LocalUser -OutVariable global:varForwarding | Export-Csv -Path "$((Get-Date).ToString('yyyyMMdd.HHmmss.'))_Get-LocalUser-OUTPUT.csv" -NoTypeInformation
+
+thebat
+Powershell.exe -executionpolicy remotesigned -File "ps1_Get-LocalUser.ps1" 
+
+
+Get-MailboxForwardingInventory @PSBoundParameters -OutVariable global:varForwarding | Export-Csv -Path "$((Get-Date).ToString('yyyyMMdd.HHmmss.'))_MailboxForwarding.csv" -NoTypeInformation
+
+
+
+
+
+
