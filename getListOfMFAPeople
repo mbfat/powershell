@@ -1,0 +1,21 @@
+
+https://learn.microsoft.com/en-us/answers/questions/8901/create-report-of-azure-mfa-users-that-have-been-en.html
+
+You can use below PowerShell cmdlets to get list of users with MFA Enabled:
+
+   1. Install-Module MSOnline 
+   If the module is not installed already.
+
+   2. Connect-MsolService 
+   Login with Global Admin account.
+
+   3. Get-MsolUser -All | select DisplayName,BlockCredential,UserPrincipalName,@{N="MFA Status"; E={ if( $_.StrongAuthenticationRequirements.State -ne $null){ $_.StrongAuthenticationRequirements.State} else { "Disabled"}}} 
+   To get a list of users with MFA Enabled
+    
+    
+    
+    
+    
+    
+    
+    
