@@ -1,6 +1,6 @@
 Use a semicolon to chain commands in PowerShell:
 
-
+Get-LocalUser
 
 
 New-LocalUser -Name "test001" -PasswordNeverExpires ; Add-LocalGroupMember -Group "Administrators" -Member "test001"
