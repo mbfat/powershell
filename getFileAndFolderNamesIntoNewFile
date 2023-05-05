@@ -1,0 +1,26 @@
+# Get the current working directory
+$workingDir = Get-Location
+
+# Get the file names and folder names in the current working directory
+$files = Get-ChildItem -Path $workingDir | Where-Object { $_.PSIsContainer -eq $false } | Select-Object -ExpandProperty Name
+$folders = Get-ChildItem -Path $workingDir | Where-Object { $_.PSIsContainer -eq $true } | Select-Object -ExpandProperty Name
+
+# Create a string containing the file and folder information
+$output = @"
+FILES
+-----
+$($files -join "`r`n")
+
+FOLDERS
+-------
+$($folders -join "`r`n")
+"@
+
+# Get the current date in the format yyyy-MM-dd
+$date = Get-Date -Format "yyyy-MM-dd"
+
+# Construct the output file name as the current working directory plus the date
+$outputFileName = "$($workingDir.Path)-$date.txt"
+
+# Write the output to the file
+$output | Out-File -FilePath $outputFileName
