@@ -1,0 +1,15 @@
+chatgpt says
+
+@echo off
+PowerShell.exe -ExecutionPolicy Bypass -File "path\to\script.ps1"
+
+PowerShell.exe -ExecutionPolicy Bypass -File "script.ps1"
+PowerShell.exe -ExecutionPolicy Bypass -File "_getFileNames.ps1"
+
+
+edge ai says
+
+Powershell.exe -executionpolicy remotesigned -File "C:\Path\script.ps1"
+
+Powershell.exe -executionpolicy remotesigned -File "script.ps1"
+Powershell.exe -executionpolicy remotesigned -File "_getFileNames.ps1"
