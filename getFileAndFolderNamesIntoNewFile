@@ -17,10 +17,11 @@ $($folders -join "`r`n")
 "@
 
 # Get the current date in the format yyyy-MM-dd
-$date = Get-Date -Format "yyyy-MM-dd"
+$date = Get-Date -Format "yyyyMMdd-hhmmss"
 
 # Construct the output file name as the current working directory plus the date
-$outputFileName = "$($workingDir.Path)-$date.txt"
+# $outputFileName = "$($workingDir.Path)-$date.txt"
+$outputFileName = "$date.txt"
 
 # Write the output to the file
 $output | Out-File -FilePath $outputFileName
